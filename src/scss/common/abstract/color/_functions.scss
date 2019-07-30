@@ -1,0 +1,44 @@
+////
+/// @group Color
+/// @author Roque Alonso
+/// 
+
+@import 'vars';
+
+/// Retrieves color value by key in $SITE_COLORS map
+/// @param {Keyword} $site - Site keyword
+/// @param {Keyword} $color-variant [primary] - Color variant
+/// @require $SITE_COLORS
+/// @return {String} Color 
+/// @example 
+/// .example {
+///     background: brand-color(vanitatis);
+/// } 
+@function brand-color($site, $color-variant: primary) {
+    @return map-get(
+        map-get(
+            $SITE_COLORS, $site
+        ), 
+        $color-variant
+    );
+}
+
+// Retrieves color value by key in $STATE_COLORS map
+/// @param {Keyword} $color-name 
+/// @param {Keyword} $color-variant [default]
+/// @require $STATE_COLORS
+/// @return {String} Color 
+/// @example 
+/// .example {
+///     background: state-color(error);
+/// 
+///     &:hover {
+///         background: state-color(error, dark);
+///     }
+/// } 
+@function state-color($color-name, $color-variant: default) {
+    @return map-get(
+        map-get($STATE_COLORS, $color-name),
+        $color-variant
+    );
+}

@@ -1,0 +1,12 @@
+{
+    "short_name": "El Nuevo Confi",
+    "name": "El Nuevo Confidencial",
+    "icons": [
+      {
+        "src": "./img/alimente-logo.svg",
+        "type": "image/png",
+        "sizes": "48x48"
+      }
+    ],
+    "start_url": "index.html"
+  }

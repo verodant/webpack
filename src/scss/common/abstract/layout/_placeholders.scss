@@ -1,0 +1,22 @@
+////
+/// @group Layout
+/// @author Roque Alonso
+/// 
+
+/// Allow a flex child to grow and shrink
+%flex-elastic-width {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/// Disallow a flex child to grow and shrink
+%flex-rigid-width {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/// Let a flex container to center vertically and horizontally his children
+%flex-total-center {
+    justify-content: center;
+    align-items: center;
+}

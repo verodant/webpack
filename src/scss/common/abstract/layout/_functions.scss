@@ -1,0 +1,70 @@
+////
+/// @group Layout
+/// @author Roque Alonso
+/// 
+
+@import '../layout/vars';
+
+/// Easily include media-queries based on a breakpoint value
+/// @param {Keyword} $breakpoint - Keyword from $BREAKPOINTS map
+/// @param {Keyword} $direction [from] - Defines if media query is "from value" or "to value" of the breakpoint keyword value
+/// @param {Keyword} $modifier [width] - Optional param to set the breakpoint modifier
+/// @example @include media-query(desktop) { ...content }
+/// @example @include media-query(desktop, to, height) { ...content }
+/// @requires $BREAKPOINTS
+@mixin media-query($breakpoint, $direction: 'from', $modifier: 'width') {
+    $value: map-get($BREAKPOINTS, $breakpoint);
+
+    @if $value != null {
+        @if $direction == "from" {
+            @media (min-#{$modifier}: $value) {
+                @content;
+            }
+        } @else if $direction == "to" {
+            @media (max-#{$modifier}: $value - 1px) {
+                @content;
+            }
+        }
+    } @else {
+        @warn "No value could be retrieved from `#{$breakpoint}`. "
+            + "Please make sure it is defined in `$BREAKPOINTS` map.";
+    }
+}
+
+/// Sets width on a child of a flex container
+/// @param {String} $value - Value with units
+@mixin flex-width($value) {
+    max-width: $value;
+    flex-basis: $value;
+}
+
+/// Overwrites the padding or margin of the container to make the element full width
+/// @param {String} $margin - margin to overwrite with units
+@mixin force-width($margin) {
+    width: calc(100% + #{$margin}*2);
+    transform: translateX(-($margin));
+}
+
+/// Overwrites a padding or margin to make element full width
+/// @param {String} $position [0] - Value of position with units
+/// @param {String} $direction [top] - top, right, bottom or left
+/// @param {Boolan|String} $transition [$transition-fast-default] - Optional transition
+@mixin fixedContent($position: 0, $direction: top, $transition: $transition-fast-default) {
+    position: sticky;
+    #{$direction}: $position;
+    @if $transition {
+        transition: $transition;
+    }
+}
+
+
+@mixin makeDefaultContainer() {
+    margin: 0 auto;
+    padding: 0 $general-margin;
+    max-width: map-get($BREAKPOINTS, desktop);
+    width: 100%;
+
+    @include media-query (tablet) {
+        padding: 0 $general-margin-large;
+    }
+}

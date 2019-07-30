@@ -1,0 +1,85 @@
+@import '../../abstract/abstracts';
+
+.articleHeader {
+    height: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: map-get($BREAKPOINTS, xl);
+    margin: 0 auto;
+    padding: 0 $general-margin;
+
+    @include media-query (tablet) {
+        height: 64px;
+        padding: 0 $general-margin-large;
+    }
+
+    &__side {
+        display: flex;
+        align-items: center;
+        @extend %flex-elastic-width;
+        height: 100%;
+        flex-basis: auto;
+
+        &--center {
+            flex-grow: 0;
+            @include flex-width($mainContainer-max-width);
+        }
+
+        &--left,
+        &--right {
+            display: none;
+        }
+
+        &--right {
+            justify-content: flex-end;
+        }
+
+        @include media-query (tablet) {
+            display: inherit;
+
+            &--center {
+                padding: 0 24px;
+            }
+        }
+    }
+
+    &__section {
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+
+        @include media-query (tablet) {
+            font-size: 24px;
+        }
+    }
+
+    &__sectionColor {
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: #007ae6;
+        margin-left: 8px;
+        position: relative;
+        top: 2px;
+
+        @include media-query (tablet) {
+            width: 12px;
+            height: 12px;
+            margin-left: 12px;
+        }
+    }
+
+    &__category {
+        margin-left: 12px;
+        font-size: 18px;
+        font-style: italic;
+        font-family: $font-family-serif;
+
+        @include media-query (tablet) {
+            font-size: 24px;
+        }
+    }
+}

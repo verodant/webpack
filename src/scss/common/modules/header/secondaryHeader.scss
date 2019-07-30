@@ -1,0 +1,107 @@
+@import "../../abstract/abstracts";
+@import "vars";
+
+
+.secondaryHeader {
+    transform: translateY(-100%);
+    position: absolute;
+    width: 100%;
+    z-index: map-get($zIndexHeader, secondaryHeader);
+    background: map_get($GENERAL_COLORS, level-5);
+    transition: $transition-fast-default;
+
+    &__wrapper {
+        max-width: map-get($BREAKPOINTS, xl);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding: 0 $general-margin;
+        height: 40px;
+
+        @include media-query (tablet) {
+            padding: 0 $general-margin-large;
+            height: 53px;
+        }
+
+        @include media-query (desktop) {
+            height: 52px;
+        }
+    }
+
+    &__side {
+        display: flex;
+        align-items: center;
+        @extend %flex-elastic-width;
+        height: 100%;
+        flex-basis: auto;
+
+        &--left,
+        &--right {
+            display: none;
+
+            @include media-query (desktop) {
+                display: inherit;
+            }
+        }
+
+        &--center {
+            flex-grow: 0;
+            @include flex-width($mainContainer-max-width);
+            display: flex;
+            max-width: 100%;
+
+            @include media-query (desktop) {
+                padding: 0 $general-margin-large;
+            }
+        }
+
+        &--right {
+            justify-content: flex-end;
+        }
+    }
+
+    &__section {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1.33;
+        display: flex;
+        align-items: center;
+    }
+
+    &__sectionColor {
+        display: block;
+        width: 8px;
+        height: 8px;
+        background-color: #007ae6;
+        margin-left: 6px;
+        position: relative;
+        top: 2px;
+    }
+
+    &__articleTitle {
+        margin-left: 6px;
+        font-size: 15px;
+        color: map-get($GENERAL_COLORS, level-3);
+        @include text-ellipsis();
+    }
+
+    &__progress {
+        height: 13px;
+        display: flex;
+        align-items: flex-end;
+        background: url('//www.ecestaticos.dev/build/img/lines.png') repeat;
+    //    background-size: auto auto;
+    //    background-image: repeating-linear-gradient(135deg, transparent, transparent 3px, map-get($GENERAL_COLORS, level-4) 3px, map-get($GENERAL_COLORS, level-4) 4px);
+    }
+
+    &__progressBar {
+        height: 4px;
+        background: map-get($GENERAL_COLORS, level-1);
+        width: 30%;
+    }
+
+    &--isActive {
+        transform: translateY(0%);
+    }
+}

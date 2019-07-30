@@ -1,0 +1,71 @@
+////
+/// @group Color
+/// @author Roque Alonso
+/// 
+
+/// Get colors by site or section
+/// @type Map
+$SITE_COLORS: (
+  confidencial: (
+    primary: #04232e
+  ),
+  vanitatis: (
+    primary: #d92f2f
+  ),
+  alimente: (
+    primary: #6adfb7
+  ),
+  gentleman: (
+    primary: #313131 
+  ),
+  cotizalia: (
+    primary: #e8e6dc 
+  ),
+  acyv: (
+    primary: #ff6f61 
+  )
+);
+
+/// State color for UI
+/// @type Map
+$STATE_COLORS: (
+  success: (
+    light: #5ae2a8,
+    default: #38be85,
+  ),
+  warn: (
+    light: #ffbd54,
+    default: #f39c12,
+    dark: #d35400
+  ),
+  error: (
+    light: #ff767b,
+    default: #ff3709,
+  )
+);
+
+/// General grey scale colors for UI
+/// @type Map
+$GENERAL_COLORS: (
+  level-1: #121212,
+  level-2: #414141,
+  level-3: #828282,
+  level-4: #e4e4e4,
+  level-5: white
+);
+
+/// Map of section colors, site colors extends from $SITE_COLORS as sections
+/// @type Map
+$SECTION_COLORS: (
+  opinion: #e4f4fb,
+  mundo: #ffe39f,
+  cultura: #7789d0,
+  deporte: #bdd795,
+  teknautas: #e864ac,
+  vanitatis: brand-color(vanitatis),
+  confidencial: brand-color(confidencial),
+  cotizalia: brand-color(cotizalia),
+  gentleman: brand-color(gentleman),
+  alimente: brand-color(alimente),
+  acyv: brand-color(acyv)
+);

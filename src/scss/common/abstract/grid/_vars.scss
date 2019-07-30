@@ -1,0 +1,12 @@
+////
+/// @group Grid
+/// @author Roque Alonso
+/// 
+
+/// Default grid column count
+/// @type Number
+$grid-columns: 12 !default;
+
+/// Default grid column gutter
+/// @type String
+$grid-gutter-width: 24px !default;

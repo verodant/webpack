@@ -1,0 +1,31 @@
+@import '../abstract/abstracts';
+
+@include font-face(Playfair, '//www.ecestaticos.#{$ENV}/fonts/generic/playfairdisplay-regular/playfairdisplay-regular-webfont', normal, normal, woff woff2);
+@include font-face(Playfair, '//www.ecestaticos.#{$ENV}/fonts/generic/playfairdisplay-italic/playfairdisplay-italic-webfont', normal, italic,  woff woff2);
+
+@include font-face(Roboto, '//www.ecestaticos.#{$ENV}/fonts/generic/roboto-regular/roboto-regular', normal, normal,  woff woff2);
+@include font-face(Roboto, '//www.ecestaticos.#{$ENV}/fonts/generic/roboto-bold/roboto-bold', bold, normal,  woff woff2);
+
+h1 {
+  @include header-config(46px);
+}
+
+h2 {
+  @include header-config(36px);
+}
+
+h3 {
+  @include header-config(32px);
+}
+
+h4 {
+  @include header-config(24px);
+}
+
+h5 {
+  @include header-config(20px);
+}
+
+h6 {
+  @include header-config(18px);
+}

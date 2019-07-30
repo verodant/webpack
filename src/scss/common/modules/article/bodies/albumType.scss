@@ -1,0 +1,71 @@
+
+@import '../../../abstract/abstracts';
+
+.albumType {
+
+    &__item {
+        padding: 50px 0 0 0;
+
+        &:first-child {
+            padding: 0;
+        }
+    }
+
+    &__imgWrapper {
+        position: relative;
+
+        @include media-query(tablet, to) {
+            @include force-width(16px);
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    &__expand {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+
+        path {
+            fill: map-get($GENERAL_COLORS, level-3);
+        }
+    }
+    
+    &__titleWrapper {
+        display: flex;
+        margin-top: $general-margin;
+    }
+
+    &__caption {
+        flex: 1 1 100%;
+    }
+
+    &__title {
+        font-size: 18px;
+        line-height: 1.56;
+        font-weight: bold;
+        font-family: $font-family-sans;
+    }
+
+    &__titleAside {
+        flex: 1 1 auto;
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 1.56;
+        margin-top: $general-margin;
+    }
+
+    &__separator {
+        margin-top: 56px;
+        background: map-get($GENERAL_COLORS, level-4);
+
+        @include media-query(tablet, to) {
+            @include force-width(16px);
+        }
+    }
+}

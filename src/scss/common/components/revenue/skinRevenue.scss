@@ -1,0 +1,44 @@
+@import '../../abstract/abstracts';
+@import '../../modules/header/vars';
+
+.skinRevenue {
+    position: relative;
+
+    &__wrapper {
+
+        &--center {
+            display: flex;
+            justify-content: center;
+
+            @include media-query(desktop, to) {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        &--left,
+        &--right {
+            position: absolute;
+            top: 0;
+            left: calc(-200px - #{$general-margin-large});
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            &>* {
+                @include fixedContent(calc(#{$mainHeader-height} + var(--revenue-margin)));
+
+                @include media-query(desktop, to) {
+                    display: none;
+                }
+            }
+
+        }
+
+        &--right {
+            right: calc(-200px - #{$general-margin-large});
+            left: unset;
+        }
+    }
+}

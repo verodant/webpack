@@ -1,0 +1,22 @@
+@import '../abstract/abstracts';
+@import '../base/typography';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-sans;
+  overflow-x: hidden;
+}
+
+:root {
+  @include customProperty(revenue-margin, 20px);
+}

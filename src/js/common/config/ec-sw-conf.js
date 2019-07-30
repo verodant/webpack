@@ -1,0 +1,1 @@
+importScripts('https://www.ecestaticos.dev/build/js/common/config/sw-conf.js')

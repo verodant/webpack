@@ -1,0 +1,41 @@
+@import "../../abstract/abstracts";
+
+// generador de botones
+$buttons:(
+    ("primary", map-get($GENERAL_COLORS, level-1), map-get($GENERAL_COLORS, level-5), map-get($GENERAL_COLORS, level-5), map-get($GENERAL_COLORS, level-1)),
+);
+
+.ctaButton {
+    font-family: $font-family-sans;
+    font-size: 15px;
+    padding: 0 10px;
+    border-radius: 2px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    @each $name, $background-color, $text-color, $hover-background-color, $hover-text-color in $buttons {
+        &--#{$name} {
+            background: $background-color;
+            color: $text-color;
+
+            @if ($hover-background-color) {
+                &:hover, &--inverted {
+                    background: $hover-background-color;
+                    color: $hover-text-color
+                }
+
+                &--inverted:hover {
+                    background: $background-color;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+@mixin defaultButton($name, $background-color, $text-color, $hover-background-color, $hover-text-color) {
+
+}

@@ -1,0 +1,51 @@
+@import '../abstract/abstracts';
+
+.innerArticle {
+    margin-top: $general-margin-large;
+
+    &__opening {}
+
+    &__body {
+        margin-top: $general-margin;
+    }
+
+    &__container {
+        @include grid-container();
+        margin-top: $general-margin;
+    }
+
+    &__content {
+
+        @include grid-col(1, 1);
+
+        @include media-query(tablet) {
+            @include grid-col(5, 9);
+        }
+
+        @include media-query(desktop) {
+            @include grid-col(8);
+        }
+    }
+
+    &__bar {
+        margin-bottom: $general-margin;
+    }
+
+    &__aside {
+        @include auto-col();
+        margin-top: $general-margin;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+
+        @include media-query(tablet) {
+            margin-top: 0;
+        }
+
+        @include media-query(desktop) {
+            //revisar altura final de articleHeaderBar
+            margin-top: 19px + $general-margin;
+        }
+    }
+}

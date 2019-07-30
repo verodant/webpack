@@ -1,0 +1,41 @@
+////
+/// @group Layout
+/// @author Roque Alonso
+/// 
+
+/// General breakpoints map
+/// @type Map
+$BREAKPOINTS: (
+  mobile: 360px,
+  tablet: 768px,
+  desktop: 996px,
+  xl: 1440px
+);
+
+/// @type String
+$mainContainer-max-width: map-get($BREAKPOINTS, desktop);
+
+/// @type String
+$general-margin: 16px;
+
+/// @type String
+$general-margin-large: 24px;
+
+/// Z-index map for fixed elements
+/// @type Map
+$zIndex: (
+  header: 999
+);
+
+/// Z-index map for header elements
+/// @type Map
+$zIndexHeader: (
+  mainHeader: 2,
+  secondaryHeader: 1,
+  seoMenuSubList: 1
+);
+
+
+//TRANSITIONS
+$transition-medium-default: .2s ease-in;
+$transition-fast-default: .15s ease-in;

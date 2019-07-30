@@ -1,0 +1,9 @@
+@import "../../abstract/abstracts";
+
+.header {
+    width: 100%;
+    position: fixed;
+    background: white;
+    justify-content: center;
+    z-index: map-get($zIndex, header);
+}

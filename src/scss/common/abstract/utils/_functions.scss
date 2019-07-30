@@ -1,0 +1,13 @@
+////
+/// @group Helpers
+/// @author Roque Alonso
+///
+
+/// Define custom css property
+/// @param {String} $var - Input string
+/// @param {String} $value - String to change
+///
+/// @example customProperty(customProp, 30px)
+@mixin customProperty($var, $value) {
+  --#{$var}: #{$value};
+}

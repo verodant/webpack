@@ -1,0 +1,10 @@
+@import '../../abstract/abstracts';
+
+.articleHeaderBar {
+
+    .dateTime {
+        font-size: 15px;
+        line-height: 1.33;
+        color: map-get($GENERAL_COLORS, level-3);
+    }
+}

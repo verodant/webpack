@@ -1,0 +1,247 @@
+@import '../../abstract/abstracts';
+
+.footer {
+
+}
+
+.sectionsFooter {
+  @include makeDefaultContainer();
+  padding: 0;
+  font-size: 15px;
+
+  @include media-query(tablet) {
+    padding: 0;
+  }
+
+  @include media-query(desktop) {
+    padding: 0;
+  }
+
+  &__wrapper {
+    background: map-get($GENERAL_COLORS, level-1);
+    color: map-get($GENERAL_COLORS, level-5);
+  }
+
+  &__logo {
+    width: 120px;
+    margin-right: 20px;
+    display: none;
+
+    path {
+      fill: map-get($GENERAL_COLORS, level-5);
+
+    }
+
+    @include media-query(desktop) {
+      display: block;
+    }
+  }
+
+  &__section {
+    display: flex;
+    padding: ($general-margin-large - 6) $general-margin-large;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      background-image: linear-gradient(90deg, map-get($GENERAL_COLORS, level-5), map-get($GENERAL_COLORS, level-5) 50%, transparent 50%, transparent 100%);
+      background-size: 2px;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      display: block;
+      top: 0;
+
+      @include media-query(desktop) {
+        width: calc(100% - #{$general-margin-large});
+        left: $general-margin-large/2;
+      }
+    }
+
+    &:first-child:after {
+      display: none;
+    }
+
+    &--trigger {
+      text-align: center;
+      display: inherit;
+      cursor: pointer;
+    }
+
+    @include media-query(desktop, to) {
+
+      &--community {
+        display: none;
+      }
+
+      &--sections {
+        max-height: 0;
+        padding: 0 $general-margin-large;
+        transition: $transition-fast-default;
+      }
+
+      &--trigger.sectionsFooter__section--isActive {
+
+        .sectionsFooter__triggerIcon {
+          transform: rotate(180deg);
+        }
+
+        & + .sectionsFooter__section--sections {
+          max-height: 900px;
+        }
+      }
+    }
+
+    @include media-query(desktop) {
+      justify-content: inherit;
+      padding: ($general-margin-large - 6) ($general-margin-large/2);
+
+      &--sections {
+        padding: $general-margin-large ($general-margin-large/2);
+      }
+
+      &--trigger {
+        display: none;
+      }
+    }
+  }
+
+  &__triggerIcon {
+    width: 0px;
+    height: 0px;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 4px solid map-get($GENERAL_COLORS, level-3);
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
+  &__list, &__sectionList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include media-query(desktop) {
+      justify-content: inherit;
+    }
+  }
+
+  &__sectionListItem {
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 2px;
+      height: 2px;
+      background: map-get($GENERAL_COLORS, level-3);
+      border-radius: 2px;
+      position: absolute;
+      right: 0;
+      top: 13px;
+    }
+
+    &:last-child:before {
+      display: none;
+    }
+
+    @include media-query(desktop) {
+      flex: 0 0 100%;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &__listItemLink {
+    color: map-get($GENERAL_COLORS, level-3);
+    padding: 6px $general-margin-large / 2;
+    display: inline-block;
+  }
+
+  &__sectionContainer {
+    text-align: center;
+    @include grid-col(1, 1, $general-margin-large);
+    @include grid-col(1, 8, $general-margin-large, desktop);
+    @include media-query(desktop) {
+      text-align: left;
+    }
+
+    @include media-query(desktop, to) {
+
+      &:last-child .sectionsFooter__sectionList {
+        margin: 0;
+      }
+    }
+
+  }
+
+  &__sectionContainerGrid {
+    @include grid-container($general-margin-large);
+
+    @include media-query(desktop, to) {
+      padding: $general-margin-large 0;
+    }
+  }
+
+  &__sectionList {
+    margin-bottom: $general-margin;
+
+    @include media-query(desktop) {
+      margin: 0;
+    }
+  }
+
+  &__sectionTitle {
+    margin-bottom: $general-margin;
+
+    @include media-query(desktop) {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__sectionTitleLink {
+    color: map-get($GENERAL_COLORS, level-5);
+  }
+
+  &__sectionListLink {
+    display: block;
+    color: map-get($GENERAL_COLORS, level-3);
+    padding: 4px 8px;
+
+    @include media-query(desktop) {
+      padding: 4px 0;
+    }
+  }
+
+  &__communityTitle {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.legalFooter {
+  @include makeDefaultContainer();
+  text-align: center;
+  font-size: 12px;
+  color: map_get($GENERAL_COLORS, level-3);
+  margin: 8px auto;
+
+  &__link {
+    color: map_get($GENERAL_COLORS, level-3);
+    display: inline-block;
+  }
+
+  &__wrapper {
+    line-height: 1.6;
+  }
+
+  @include media-query(desktop) {
+    padding: 0;
+  }
+}

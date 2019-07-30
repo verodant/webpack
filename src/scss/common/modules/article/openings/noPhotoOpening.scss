@@ -1,0 +1,22 @@
+@import '../../../abstract/abstracts';
+
+.noPhotoOpening {
+
+    &__backing {
+        letter-spacing: 0.5px;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+
+    &__title {
+        font-size: 28px;
+        line-height: 1.14;
+        // letter-spacing: -0.2px;
+
+        @include media-query(desktop) {
+            font-size: 44px;
+            line-height: 1.1;
+        }
+    }
+}

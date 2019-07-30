@@ -1,0 +1,33 @@
+// body {
+//     height: 2000px;
+// }
+
+//DONDE PONER LAYOUT
+@import 'abstract/abstracts';
+@import 'modules/header/vars';
+@import 'abstract/layout/vars';
+
+//BORRAR 
+// .innerArticle__aside {
+//     background: grey;
+//     padding: 30px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+.innerArticle__aside img {
+    @include fixedContent(calc(#{$mainHeader-height} + var(--revenue-margin)));
+}
+
+.demo-height {
+    height: auto;
+
+    img {
+        max-width: 100%;
+    }
+
+    @include media-query (tablet) {
+        height: 1000px
+    }
+}

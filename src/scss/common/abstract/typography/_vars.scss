@@ -1,0 +1,21 @@
+////
+/// @group Typography
+/// @author Roque Alonso
+///
+
+@import '../color/vars';
+
+/// Global serif font family
+$font-family-serif: Playfair, Garamond, ‘Hoefler Text’, ‘Times New Roman’, Times, serif;
+/// Global sans font family
+$font-family-sans: Roboto, sans-serif;
+
+/// Default heading font
+$font-headings: $font-family-serif !default;
+/// Default backing font
+$font-backing: $font-family-serif !default;
+
+/// Default typography base color
+$font-color-base: map-get($GENERAL_COLORS, level-1);
+/// Default heading base color
+$font-color-heading: map-get($GENERAL_COLORS, level-1);
